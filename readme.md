@@ -42,4 +42,4 @@ def another_stage():
     functionality()
 ```
 
-A "condition_function" must be a function that returns a boolean value and so the stage will only run if it returns True
+A `condition_function` must be a function that returns a boolean value and so the stage will only run if it returns True
