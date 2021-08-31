@@ -1,7 +1,7 @@
 from os import path as ospath, makedirs
 from shutil import rmtree
 
-from main import temp_path
+from constants import temp_path
 
 def clear_temp_folder():
     if ospath.exists(temp_path):

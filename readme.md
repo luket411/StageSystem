@@ -29,4 +29,17 @@ A stage can be called as a normal function but must be passed the metadata class
 ```
 some_state(metadata, True)
 ```
-The option to force a specific stage to run again is also possible in this implementation by passing "True" as a second parameter
+The option to force a specific stage to run even if it has been run before is also possible in this implementation by passing "True" as a second parameter
+
+Conditional stage
+=================
+Sometime a stage should only be run if a certain condition is met. In this case @conditionalStage decorator can be used instead
+
+```
+@conditionalStage(condition_function, prerequisite_function, prerequisite_function, ...)
+def another_stage():
+    #Add anything the stage needs to do here
+    functionality()
+```
+
+A "condition_function" must be a function that returns a boolean value and so the stage will only run if it returns True
