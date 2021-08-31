@@ -1,8 +1,8 @@
-def stage(*pre_requesits):
+def stage(*prerequisites):
     def stagemain(func):
         def wrapper(metadata, override=False):
-            for pre_req in pre_requesits:
-                pre_req(metadata)
+            for prerequisite_function in prerequisites:
+                prerequisite_function(metadata)
             if func.__name__ in metadata.completedStages and not override:
                 return
             val = None
