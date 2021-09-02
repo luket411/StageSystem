@@ -1,20 +1,22 @@
 from Metadata import MetaData
-from decorators import stage, conditionalStage
+from decorators import *
 from conditions import check_for_flag
 from constants import temp_path
+
 
 @stage()
 def func1():
     print("Ran func1")
 
-@conditionalStage(check_for_flag, func1)
+
+@checkStage(check_for_flag, func1)
 def func2():
     print("Ran func2")
+
 
 @stage(func2)
 def func3():
     print("Ran func3")
-
 
 
 if __name__ == "__main__":

@@ -43,3 +43,17 @@ def another_stage():
 ```
 
 A `condition_function` must be a function that returns a boolean value and so the stage will only run if it returns True
+
+Check Stage
+===========
+
+Sometimes you might need to check if a stage that has been previously processed is still up to date. To to this you can pass a checker_function to the stage which it will run. 
+```
+@checkerState(checker_function, prerequisite_function, prerequisite_function, ...)
+def another_stage():
+    #Add anything the stage needs to do here
+    functionality()
+```
+
+
+The checker_function should return a boolean value and the stage will run again if the checker_function returns True
