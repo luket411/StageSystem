@@ -55,5 +55,4 @@ def another_stage():
     functionality()
 ```
 
-
 The checker_function should return a boolean value and the stage will run again if the checker_function returns True
